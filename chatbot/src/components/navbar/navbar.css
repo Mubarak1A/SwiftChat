@@ -1,0 +1,12 @@
+nav{
+    background-color: whitesmoke;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+}
