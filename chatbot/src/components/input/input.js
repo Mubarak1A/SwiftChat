@@ -7,7 +7,7 @@ const Input = () => {
             <div className='input'>
                 <p>Input:</p>
                 <input type='text' className='text-box'/>
-                <button>SEND</button>
+                <button id='send-button'>SEND</button>
             </div>
         </div>
     );
