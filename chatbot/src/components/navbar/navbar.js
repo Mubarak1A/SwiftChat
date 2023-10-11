@@ -8,7 +8,9 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
                 <div className="nav">
                     <nav>
                         <h1>LOGO</h1>
-                        <a href="#" onClick={() => onRouteChange('landingPage')}>Signout</a>
+                        <a href="#" onClick={() => {
+                            onRouteChange('landingPage')}
+                        }>Signout</a>
                     </nav>
                 </div>
             );
