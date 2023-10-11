@@ -16,8 +16,8 @@ class App extends Component {
     }
   }
 
-  onRouteChange = () => {
-    this.setState({route: 'App'})
+  onRouteChange = (page) => {
+    this.setState({route: page})
   }
 
   render() {
@@ -27,9 +27,9 @@ class App extends Component {
         { this.state.route === 'landingPage'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : this.state.route === 'signUp'
-         ? <Signup />
+         ? <Signup onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
-         ? <Signin />
+         ? <Signin onRouteChange={this.onRouteChange}/>
          : <div>
             <Input />
             <Output />

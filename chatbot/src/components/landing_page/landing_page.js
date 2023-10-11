@@ -8,7 +8,7 @@ const LandingPage = ({ onRouteChange }) => {
             <p> The island doesn't have "lakes'
                 (water inside that isn't connected to the water surrounding the island).
             </p>
-            <button onClick={ onRouteChange }>Explore App</button>
+            <button onClick={() => onRouteChange('signUp')}>Explore App</button>
         </div>
     );
 }
