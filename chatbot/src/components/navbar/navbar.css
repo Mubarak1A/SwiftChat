@@ -6,6 +6,12 @@ nav{
     flex-wrap: wrap;
 }
 
+.nav-log{
+    display: flex;
+    width: 10%;
+    justify-content: space-around;
+}
+
 h1{
     margin: 0;
     padding: 0;

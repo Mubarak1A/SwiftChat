@@ -12,24 +12,36 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      route: 'landingPage'
+      route: 'landingPage',
+      isSignedIn: false
     }
   }
 
-  onRouteChange = (page) => {
-    this.setState({route: page})
+  onRouteChange = (route) => {
+    if (route === 'signout'){
+      this.setState({isSignedIn: false})
+    }
+    else if (route === 'App') {
+      this.setState({isSignedIn: true})
+    }
+    this.setState({route: route})
   }
 
   render() {
     return(
       <div>
-        <Navbar />
+        <Navbar 
+          onRouteChange={this.onRouteChange}
+          isSignedIn={this.state.isSignedIn}
+        />
         { this.state.route === 'landingPage'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : this.state.route === 'signUp'
          ? <Signup onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
          ? <Signin onRouteChange={this.onRouteChange}/>
+         : this.state.route === 'signOut'
+         ? <LandingPage onRouteChange={this.onRouteChange} />
          : <div>
             <Input />
             <Output />
