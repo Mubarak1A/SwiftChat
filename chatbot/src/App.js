@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, Component} from 'react';
 //import ReactDOM from 'react-dom/client';
 import Navbar from './components/navbar/navbar';
 import Signup from './components/signup/signup';
@@ -8,17 +8,36 @@ import Input from './components/input/input';
 import Output from './components/output/output'
 import './App.css';
 
-const App = () => {
-  return (
-    <div>
-      <Navbar />
-      <Signup />
-      <Signin />
-      <LandingPage />
-      <Input />
-      <Output />
-    </div>
-  );
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      route: 'landingPage'
+    }
+  }
+
+  onRouteChange = () => {
+    this.setState({route: 'App'})
+  }
+
+  render() {
+    return(
+      <div>
+        <Navbar />
+        { this.state.route === 'landingPage'
+         ? <LandingPage onRouteChange={this.onRouteChange} />
+         : this.state.route === 'signUp'
+         ? <Signup />
+         : this.state.route === 'signIn'
+         ? <Signin />
+         : <div>
+            <Input />
+            <Output />
+          </div>
+        }
+      </div>
+    );
+  }
 }
 
 export default App;
