@@ -13,6 +13,7 @@ class App extends Component {
     super();
     this.state = {
       input: '',
+      output: '',
       route: 'landingPage',
       isSignedIn: false
     }
@@ -23,8 +24,10 @@ class App extends Component {
     console.log(this.state.input)
   }
 
-  onButtonClick = () => {
+  onButtonClick = (input) => {
+    input = this.state.input;
     console.log('click')
+    this.setState({output: input})
   }
 
   onRouteChange = (route) => {
@@ -57,7 +60,7 @@ class App extends Component {
              onInput={this.onInput}
              onButtonClick={this.onButtonClick} 
             />
-            <Output />
+            <Output output={this.state.output}/>
           </div>
         }
       </div>

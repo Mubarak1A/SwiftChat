@@ -1,15 +1,20 @@
 import React from 'react';
 import './output.css'
 
-const Output = () => {
-    return(
-        <div className='output'>
+const Output = ({ output }) => {
+    if (output){
+        return(
             <div className='output'>
-                <p>Output:</p>
-                <div className='output-box'>Output is Loading.....</div>
+                <div className='output'>
+                    <p>Output:</p>
+                    <div className='output-box'>{output}</div>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    else {
+        <div></div>
+    }
 }
 
 export default Output;
