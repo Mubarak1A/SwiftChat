@@ -12,9 +12,19 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      input: '',
       route: 'landingPage',
       isSignedIn: false
     }
+  }
+
+  onInput = (event) => {
+    this.setState({input: event.target.value})
+    console.log(this.state.input)
+  }
+
+  onButtonClick = () => {
+    console.log('click')
   }
 
   onRouteChange = (route) => {
@@ -43,7 +53,10 @@ class App extends Component {
          : this.state.route === 'signOut'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : <div>
-            <Input />
+            <Input 
+             onInput={this.onInput}
+             onButtonClick={this.onButtonClick} 
+            />
             <Output />
           </div>
         }

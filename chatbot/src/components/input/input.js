@@ -1,13 +1,13 @@
 import React from 'react';
 import './input.css'
 
-const Input = () => {
+const Input = ({ onInput, onButtonClick }) => {
     return(
         <div className='input'>
             <div className='input'>
                 <p>Input:</p>
-                <input type='text' className='text-box'/>
-                <button id='send-button'>SEND</button>
+                <input type='text' className='text-box' onChange={onInput}/>
+                <button id='send-button' onClick={onButtonClick}>SEND</button>
             </div>
         </div>
     );
