@@ -7,7 +7,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
             return(
                 <div className="nav">
                     <nav>
-                        <h1>LOGO</h1>
+                        <img src="logo.png" alt=""></img>
                         <a href="#" onClick={() => {
                             onRouteChange('landingPage')}
                         }>Signout</a>
@@ -19,7 +19,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
             return(
                 <div className="nav">
                     <nav>
-                        <h1>LOGO</h1>
+                        <img src="logo.png" alt=""></img>
                         <div className="nav-log">
                             <a href="#" onClick={() => onRouteChange('signUp')}>Sign Up</a>
                             <a href="#" onClick={() => onRouteChange('signIn')}>Sign In</a>

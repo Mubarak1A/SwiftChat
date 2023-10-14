@@ -1,7 +1,23 @@
-.extras{
+.main{
     width: 70%;
     margin: auto;
     /*border: 2px red solid;*/
     margin-top: 40px;
     text-align: center;
+}
+
+.main h2{
+    font-size: 48px;
+}
+
+.main p{
+    font-size: 24px;
+}
+
+.main button{
+    width: max-content;
+    height: max-content;
+    font-size: 24px;
+    padding: 20px;
+    border-radius: 5px;
 }

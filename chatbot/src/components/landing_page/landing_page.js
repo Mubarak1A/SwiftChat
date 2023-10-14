@@ -3,12 +3,14 @@ import './landing_page.css'
 
 const LandingPage = ({ onRouteChange }) => {
     return(
-        <div className="extras">
-            <h2>Welcome Mubarak</h2>
-            <p> The island doesn't have "lakes'
-                (water inside that isn't connected to the water surrounding the island).
+        <div className="main">
+            <h2>Welcome to <strong>SwifChat</strong></h2>
+            <p>
+                Experience the future of conversations with our intelligent chatbot.
+                Engage, learn, and streamline interactions effortlessly.
+                Let's redefine dialogue, one chat at a time.
             </p>
-            <button onClick={() => onRouteChange('signUp')}>Explore App</button>
+            <button className="main-button" onClick={() => onRouteChange('signUp')}>Explore App</button>
         </div>
     );
 }
