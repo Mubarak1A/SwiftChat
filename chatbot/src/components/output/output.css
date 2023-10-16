@@ -1,18 +1,19 @@
 .output{
-    width: 80%;
-    margin: auto;
     width: 90%;
+    margin: auto;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
+    background-color: rgb(232, 232, 247);
 }
 
 .output-box{
     width: 90%;
-    height: max-content;
+    height: 40px;
     margin: auto;
     padding: 10px;
-    background-color: rgb(233, 226, 226);;
+    font-size: 1.5em;
+    background-color: rgb(203, 241, 203);
 }
 
 .output p{

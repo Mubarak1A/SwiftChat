@@ -3,7 +3,7 @@ import { React, Component} from 'react';
 import Navbar from './components/navbar/navbar';
 import Signup from './components/signup/signup';
 import Signin from './components/signin/signin';
-import Auth from './components/auth/auth';
+//import Auth from './components/auth/auth';
 import LandingPage from './components/landing_page/landing_page';
 import Input from './components/input/input';
 import Output from './components/output/output'
@@ -51,7 +51,7 @@ class App extends Component {
         { this.state.route === 'landingPage'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : this.state.route === 'signUp'
-         ? <Auth onRouteChange={this.onRouteChange}/>
+         ? <Signup onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
          ? <Signin onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signOut'
