@@ -23,7 +23,7 @@ const LandingPage = ({ onRouteChange }) => {
                         Engage, learn, and streamline interactions effortlessly.
                         Let's redefine dialogue, one chat at a time.
                     </p>
-                    <button className="main-button" onClick={() => onRouteChange('signUp')}>Explore App</button>
+                    <button className="main-button" onClick={() => onRouteChange('auth')}>Explore App</button>
                 </div>
 
                 <div className="logo" style={{width:"30%", height:"30%"}}>

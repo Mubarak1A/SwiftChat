@@ -32,11 +32,11 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
                     </div>
 
                     <div className="nav-log">
-                        <a href="#" onClick={() => onRouteChange('signUp')} 
+                        <a href="#" onClick={() => onRouteChange('auth')} 
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignUp
                         </a>
-                        <a href="#" onClick={() => onRouteChange('signIn')} 
+                        <a href="#" onClick={() => onRouteChange('auth')} 
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignIn
                         </a>
