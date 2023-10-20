@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
-import 'process';
 
-const API_KEY = import.meta.env.VITE_OPENAI;
+const API_KEY = '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'
 
 const ChatBot = () => {
     const [typing, setTyping] = useState(false);
@@ -49,7 +48,7 @@ const ChatBot = () => {
 
         const systemMessages = {
             role: 'system',
-            content: 'Explain all cotent as request in the question'
+            content: 'Explain all content like i am 10 years old'
         }
 
         const apiRequestBody ={
