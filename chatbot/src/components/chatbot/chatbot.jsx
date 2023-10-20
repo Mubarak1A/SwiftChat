@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
+import 'process';
 
-const API_KEY = process.env.openAI_key;
+const API_KEY = import.meta.env.VITE_OPENAI;
 
 const ChatBot = () => {
     const [typing, setTyping] = useState(false);
