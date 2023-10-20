@@ -21,7 +21,7 @@ const Signin = ({ onRouteChange }) => {
                 </div>
 
                 <button type="submit" class="submit-button" 
-                    onClick={() => onRouteChange('app')}>
+                    onClick={() => onRouteChange('App')}>
                     Sign In
                 </button>
                 <p>Don't have an account? <a href='#' onClick={() => onRouteChange('signUp')}>Sign Up</a></p>

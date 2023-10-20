@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import './chatbot.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 
 const API_KEY = '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'
 
-const ChatBot = ({ onInput, onButtonClick }) => {
+const ChatBot = () => {
     const [typing, setTyping] = useState(false);
 
     const [messages, setMessages] = useState([
@@ -86,8 +85,9 @@ const ChatBot = ({ onInput, onButtonClick }) => {
         <div className='chatbot' style={{ marginTop:"80px"}}>
             <div style={{ position:'relative', height:'100%', width:'70%', margin:'auto' }}>
                 <MainContainer>
-                    <ChatContainer>
+                    <ChatContainer  style={{padding:"10px"}}>
                         <MessageList
+                            style={{padding:"10px"}}
                             typingIndicator={typing ? <TypingIndicator content='SwiftChat is typing'/> : null}
                         >
                             {messages.map((message, i) => {
@@ -99,7 +99,7 @@ const ChatBot = ({ onInput, onButtonClick }) => {
                 </MainContainer>
             </div>
 
-            <div class="footer">
+            <div class="footer" style={{position:"fixed", bottom:"0", right:"0", left:"0"}}>
                 &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
             </div>
         </div>

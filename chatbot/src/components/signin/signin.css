@@ -46,10 +46,6 @@ body {
   }
 
   .footer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    left: 0;
     background-color: #ff6600;
     padding: 10px 0;
     text-align: center;

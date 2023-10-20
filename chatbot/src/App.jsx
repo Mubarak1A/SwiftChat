@@ -11,26 +11,13 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      input: '',
-      output: '',
-      route: 'signIn',
+      route: 'landingPage',
       isSignedIn: false
     }
   }
 
-  onInput = (event) => {
-    this.setState({input: event.target.value})
-    //console.log(this.state.input)
-  }
-
-  onButtonClick = (input) => {
-    input = this.state.input;
-    //console.log('click')
-    this.setState({output: input})
-  }
-
   onRouteChange = (route) => {
-    if (route === 'signout'){
+    if (route === 'landingPage'){
       this.setState({isSignedIn: false})
     }
     else if (route === 'App') {
@@ -52,10 +39,10 @@ class App extends Component {
          ? <Signup onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
          ? <Signin onRouteChange={this.onRouteChange}/>
-         : this.state.route === 'signOut'
-         ? <LandingPage onRouteChange={this.onRouteChange} />
+         : this.state.route === 'App'
+         ? <ChatBot />
          : <div>
-            <ChatBot />
+            <LandingPage onRouteChange={this.onRouteChange} />
           </div>
         }
       </div>
