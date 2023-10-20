@@ -2,21 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #3498db; /* Blue background */
-  }
-
-  header {
-    background-color: #ff6600; /* Orange header background */
-    padding: 20px 0;
-    text-align: center;
-    color: white;
-    font-size: 24px;
   }
 
   .container {
-    background-color: #fff; /* White container background */
+    background-color: rgb(232, 232, 247);
     max-width: 400px;
-    margin: 0 auto;
+    margin: 80px auto;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
@@ -31,8 +22,8 @@ body {
     font-weight: bold;
   }
 
-  input[type="text"], input[type="password"] {
-    width: 100%;
+  input[type="email"], input[type="password"] {
+    width: 80%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -44,7 +35,7 @@ body {
   }
 
   .submit-button {
-    background-color: #ff6600; /* Orange button background */
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -54,8 +45,12 @@ body {
     width: 100%;
   }
 
-  footer {
-    background-color: #3498db; /* Blue footer background */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ff6600;
     padding: 10px 0;
     text-align: center;
     color: white;

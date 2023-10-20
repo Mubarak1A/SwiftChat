@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       input: '',
       output: '',
-      route: 'landingPage',
+      route: 'signIn',
       isSignedIn: false
     }
   }

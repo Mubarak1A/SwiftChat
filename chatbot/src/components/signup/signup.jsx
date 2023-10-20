@@ -1,27 +1,40 @@
-import React from'react';
+import React from 'react';
 import './signup.css'
+
 
 const Signup = ({ onRouteChange }) => {
     return(
-        <div className='signup'>
-            <form class="container" action="#">
-                <h1>Sign Up</h1>
-                <p>Please fill in this form to create an account.</p>
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter your Name" name="name" required />
-                <br />
+        <div classname='signup'>
+            <div class="container">
+                <h1>Sign up</h1>
 
-                <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required />
-                <br />
+                <form>
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your Name" required></input>
+                </div>
 
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required />
-                <br />
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required></input>
+                </div>
 
-                <button type="submit" onClick={() => onRouteChange('signIn')}>Sign Up</button>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required></input>
+                </div>
+
+                <button type="submit" class="submit-button" 
+                    onClick={() => onRouteChange('signIn')}>
+                    Sign Up
+                </button>
                 <p>Already have an account? <a href='#' onClick={() => onRouteChange('signIn')}>Sign In</a></p>
-            </form>
+                </form>
+            </div>
+
+            <div class="footer">
+                &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
+            </div>
         </div>
     );
 }

@@ -25,6 +25,8 @@ body {
 
 button{
   box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  font-family: 'Segoe UI', Tahoma, Arial, Verdana, sans-serif;;
 }
 
 .feature-section {
