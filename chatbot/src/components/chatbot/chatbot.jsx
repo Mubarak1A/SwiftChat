@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './chatbot.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 
@@ -82,7 +83,7 @@ const ChatBot = ({ onInput, onButtonClick }) => {
 
 
     return(
-        <div className='chatbot' style={{ height:'100%'}}>
+        <div className='chatbot' style={{ marginTop:"80px"}}>
             <div style={{ position:'relative', height:'100%', width:'70%', margin:'auto' }}>
                 <MainContainer>
                     <ChatContainer>
@@ -96,6 +97,10 @@ const ChatBot = ({ onInput, onButtonClick }) => {
                         <MessageInput placeholder='Enter message here' onSend={handleSend}/>
                     </ChatContainer>
                 </MainContainer>
+            </div>
+
+            <div class="footer">
+                &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
             </div>
         </div>
     );
