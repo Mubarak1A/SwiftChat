@@ -1,9 +1,8 @@
 import { React, Component} from 'react';
-//import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import Navbar from './components/navbar/navbar';
-//import Signup from './components/signup/signup';
-//import Signin from './components/signin/signin';
-import Auth from './components/auth/auth';
+import Signup from './components/signup/signup';
+import Signin from './components/signin/signin';
 import LandingPage from './components/landing_page/landing_page';
 import ChatBot from './components/chatbot/chatbot';
 import './App.css';
@@ -14,7 +13,7 @@ class App extends Component {
     this.state = {
       input: '',
       output: '',
-      route: 'App',
+      route: 'landingPage',
       isSignedIn: false
     }
   }
@@ -49,10 +48,10 @@ class App extends Component {
         />
         { this.state.route === 'landingPage'
          ? <LandingPage onRouteChange={this.onRouteChange} />
-         : this.state.route === 'auth'
+         : this.state.route === 'signUp'
          ? <Signup onRouteChange={this.onRouteChange}/>
-         //: this.state.route === 'signIn'
-         //? <Signin onRouteChange={this.onRouteChange}/>
+         : this.state.route === 'signIn'
+         ? <Signin onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signOut'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : <div>
