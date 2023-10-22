@@ -15,7 +15,7 @@ class App extends Component {
       isSignedIn: false
     }
   }
-
+  
   onRouteChange = (route) => {
     if (route === 'landingPage'){
       this.setState({isSignedIn: false})
