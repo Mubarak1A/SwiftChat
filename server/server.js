@@ -50,6 +50,11 @@ app.post('/signin', (req, res) => {
 
 app.post('/register', (req, res) => {
     const { name, email, password } = req.body;
+    database.users.forEach((user) => {
+        if (email === user.email){
+            return res.json("the email has already been used");
+        }
+    })
     database.users.push({
         id: '125',
         name: name,
