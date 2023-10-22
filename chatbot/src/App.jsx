@@ -72,7 +72,7 @@ class App extends Component {
          : this.state.route === 'signUp'
          ? <Signup loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
-         ? <Signin onRouteChange={this.onRouteChange}/>
+         ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
          : this.state.route === 'App'
          ? <ChatBot />
          : <div>

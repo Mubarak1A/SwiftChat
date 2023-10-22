@@ -1,11 +1,11 @@
-const express = required('express');
+const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+//const cors = require('cors');
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors())
+//app.use(cors())
 
 const database = {
     users: [
@@ -13,6 +13,7 @@ const database = {
             id: '123',
             name: 'John',
             email: 'john@gmail.com',
+            password: '1234',
             chats: '',
             joined: new Date()
         },
@@ -20,6 +21,7 @@ const database = {
             id: '124',
             name: 'Sally',
             email: 'sally@gmail.com',
+            password: '1234',
             chat: '',
             joined: new Date()
         }
@@ -48,27 +50,26 @@ app.post('/signin', (req, res) => {
 
 app.post('/register', (req, res) => {
     const { name, email, password } = req.body;
-    database.push({
+    database.users.push({
         id: '125',
-            name: name,
-            email: email,
-            password: password,
-            entries: 0,
-            joined: new Date()
-    })
-
+        name: name,
+        email: email,
+        password: password,
+        chats: "",
+        joined: new Date()
+    });
     res.json(database.users[database.users.length-1]);
 })
 
 
 app.put('/chatbot', (req, res) => {
-    const { id } = req.body;
+    const { id, chat } = req.body;
     let found = false;
 
     database.users.forEach((user) => {
         if (user.id === id){
             found = true
-            user.chat = req.body
+            user.chats = chat
             return res.json(user);
         }
     })
@@ -78,7 +79,7 @@ app.put('/chatbot', (req, res) => {
     }
 })
 
-app.get('/:id/profile', (req, res) => {
+app.get('/profile/:id', (req, res) => {
     const { id } = req.params;
     let found = false;
 
@@ -94,4 +95,6 @@ app.get('/:id/profile', (req, res) => {
     }
 })
 
-app.listen(5000);
+app.listen(5000, () => {
+    console.log('app is running')
+});
