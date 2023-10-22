@@ -23,6 +23,20 @@ class App extends Component {
     }
   }
 
+  updateChats = (data) => {
+    fetch('http://localhost/chatbot', {
+        method: 'put',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            id: this.state.id
+        })
+    })
+    .then(response => response.json())
+    .then(chats => {
+      this.setState(Object.assign(this.state.user, {chats: chats + data}))
+    })
+}
+
   loadUser = (data) => {
     this.setState(
       {user: {

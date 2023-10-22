@@ -40,7 +40,7 @@ app.get('/', (req, res) => {
 app.post('/signin', (req, res) => {
     if (req.body.email === database.users[0].email &&
         req.body.password === database.users[0].password) {
-        res.json('signin successful');
+        res.json(database.users[0]);
     } else {
         res.status(400).json('error loging in')
     }
@@ -61,8 +61,8 @@ app.post('/register', (req, res) => {
 })
 
 
-app.put('/chatbot/:id', (req, res) => {
-    const { id } = params;
+app.put('/chatbot', (req, res) => {
+    const { id } = req.body;
     let found = false;
 
     database.users.forEach((user) => {

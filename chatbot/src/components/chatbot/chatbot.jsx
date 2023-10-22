@@ -33,6 +33,9 @@ const ChatBot = () => {
         //process message to openAi api
         await processMessageToOpenAI(newMessages);
 
+        //update user chat
+        updateChats(newMessage);
+
     }
 
     async function processMessageToOpenAI(chatMessages) {
