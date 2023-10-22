@@ -12,10 +12,30 @@ class App extends Component {
     super();
     this.state = {
       route: 'landingPage',
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '',
+        name: '',
+        email: '',
+        chats: '',
+        joined: ''
+      }
     }
   }
-  
+
+  loadUser = (data) => {
+    this.setState(
+      {user: {
+          id: data.id,
+          name: data.name,
+          email: data.email,
+          chats: data.chats,
+          joined: data.joined
+        }
+      }
+    )
+  }
+
   onRouteChange = (route) => {
     if (route === 'landingPage'){
       this.setState({isSignedIn: false})
@@ -36,7 +56,7 @@ class App extends Component {
         { this.state.route === 'landingPage'
          ? <LandingPage onRouteChange={this.onRouteChange} />
          : this.state.route === 'signUp'
-         ? <Signup onRouteChange={this.onRouteChange}/>
+         ? <Signup loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
          : this.state.route === 'signIn'
          ? <Signin onRouteChange={this.onRouteChange}/>
          : this.state.route === 'App'
