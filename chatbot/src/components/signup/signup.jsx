@@ -1,91 +1,79 @@
-import React from 'react';
+import { React, useState } from 'react';
 import './signup.css';
 
 
-class Signup extends React.Component() {
-    constructor(props) {
-        super(props);
-        this.state = {
-            signInName : '',
-            signInEmail: '',
-            signInPassword: ''
-        }
-    }
+const Signup = ({ onRouteChange, loadUser }) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    onNameChange = (event) => {
-        this.setState({signInName: event.target.value})
-    }
 
-    onEmailChange = (event) => {
-        this.setState({signInEmail: event.target.value})
-    }
+    const onSubmitSignin = async () => {
+        const myForm = document.getElementById('myForm');
 
-    onPasswordChange = (event) => {
-        this.setState({signInPassword: event.target.value});
-    }
-
-    onSubmitSignin = () => {
-        fetch('http://localhost:5000/register', {
-            method: 'post',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                name: this.state.signInName,
-                email: this.state.signInEmail,
-                password: this.state.signInPassword
-            })
-        }) 
-        .then(response => response.json)
-        .then(user => {
-            if (user.id){
-                this.props.loadUser(user);
-                this.props.onRouteChange('signIn');
-            }
+        myForm.addEventListener("submit", function (event) {
+            event.preventDefault();
         })
-    }
 
-    render() {
-        const { onRouteChange } = this.props;
-        return (
-            <div classname='signup'>
-            <div class="container">
-                <h1>Sign up</h1>
+        const response = await fetch('http://localhost:5000/signin', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+          },
+            body: JSON.stringify({ name, email, password }),
+        });
 
-                <form>
-                <div class="form-group">
-                    <label for="username">Name</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your Name" required
-                        onChange={this.onNameChange}>
-                    </input>
-                </div>
+        console.log(response.status);
+        console.log(response);
+        
+        if (response.status === 400) {
+            // Successful sign-in, you can redirect or show a success message
+            loadUser(user);
+            onRouteChange('signIn');
+        } else {
+            // Handle errors, e.g., display error message
+            alert("Incorrect email or password");
+        }
+    };
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required
-                        onChange={this.onEmailChange}>
-                    </input>
-                </div>
+    return (
+        <div classname='signup'>
+        <div class="container">
+            <h1>Sign up</h1>
 
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required
-                        onChange={this.onPasswordChange}>
-                    </input>
-                </div>
-
-                <button type="submit" class="submit-button" 
-                    onClick={this.onSubmitSignin}>
-                    Sign Up
-                </button>
-                <p>Already have an account? <a href='#' onClick={() => onRouteChange('signIn')}>Sign In</a></p>
-                </form>
+            <form method='POST'>
+            <div class="form-group">
+                <label for="username">Name</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Name" required>
+                </input>
             </div>
 
-            <div class="footer">
-                &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </input>
             </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </input>
+            </div>
+
+            <button type="#submit" class="submit-button" 
+                onClick={onSubmitSignin}>
+                Sign Up
+            </button>
+            <p>Already have an account? <a href='#' onClick={() => onRouteChange('signIn')}>Sign In</a></p>
+            </form>
         </div>
-        );
-    }
+
+        <div class="footer">
+            &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
+        </div>
+    </div>
+    );
 }
+
 
 export default Signup;

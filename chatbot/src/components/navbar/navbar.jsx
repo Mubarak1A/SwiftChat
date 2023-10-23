@@ -14,7 +14,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
                     </div>
 
                     <div className="nav-log">
-                        <a href="#" onClick={() => {onRouteChange('landingPage')}}
+                        <a href="home" onClick={() => {onRouteChange('landingPage')}}
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignOut
                         </a>
@@ -32,11 +32,11 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
                     </div>
 
                     <div className="nav-log">
-                        <a href="#" onClick={() => onRouteChange('signUp')} 
+                        <a href="#sign-up" onClick={() => onRouteChange('signUp')} 
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignUp
                         </a>
-                        <a href="#" onClick={() => onRouteChange('signIn')} 
+                        <a href="#sign-in" onClick={() => onRouteChange('signIn')} 
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignIn
                         </a>

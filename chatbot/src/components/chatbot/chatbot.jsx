@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 
-const API_KEY = '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'
+const API_KEY = import.meta.env.API_KEY
 
 const ChatBot = () => {
     const [typing, setTyping] = useState(false);
@@ -34,7 +34,7 @@ const ChatBot = () => {
         await processMessageToOpenAI(newMessages);
 
         //update user chat
-        updateChats(newMessage);
+        //updateChats(newMessage);
 
     }
 
@@ -51,7 +51,7 @@ const ChatBot = () => {
 
         const systemMessages = {
             role: 'system',
-            content: 'Explain all content like i am 10 years old'
+            content: 'Explain all content as it is been asked'
         }
 
         const apiRequestBody ={
@@ -102,7 +102,7 @@ const ChatBot = () => {
                 </MainContainer>
             </div>
 
-            <div class="footer" style={{position:"fixed", bottom:"0", right:"0", left:"0"}}>
+            <div class="footer" style={{position:"fixed", bottom:"0", right:"0", left:"0", marginTop:"20px"}}>
                 &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
             </div>
         </div>
