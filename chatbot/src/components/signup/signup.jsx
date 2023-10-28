@@ -88,7 +88,7 @@ const Signup = ({ onRouteChange, loadUser }) => {
           </button>
           <p>
             Already have an account?{' '}
-            <a href='#sign-in' onClick={() => onRouteChange('signIn')}>
+            <a href='#' onClick={() => onRouteChange('signIn')}>
               Sign In
             </a>
           </p>

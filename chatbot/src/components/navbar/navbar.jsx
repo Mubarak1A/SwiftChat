@@ -14,7 +14,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
 
       <div className="nav-log">
         <a
-          href="#home"
+          href="#"
           onClick={() => onRouteChange('landingPage')}
           style={{
             color: "rgb(110, 104, 104)",
@@ -39,7 +39,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
 
       <div className="nav-log">
         <a
-          href="#sign-up"
+          href="#"
           onClick={() => onRouteChange('signUp')}
           style={{
             color: "rgb(110, 104, 104)",
@@ -50,7 +50,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
           SignUp
         </a>
         <a
-          href="#sign-in"
+          href="#"
           onClick={() => onRouteChange('signIn')}
           style={{
             color: "rgb(110, 104, 104)",

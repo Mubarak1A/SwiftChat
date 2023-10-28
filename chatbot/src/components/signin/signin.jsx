@@ -18,13 +18,13 @@ const Signin = ({ onRouteChange }) => {
       });
 
       if (response.status === 200) {
-        // Successful sign-in, you can redirect or show a success message
+
         const userData = await response.json();
-        // Assuming you have a loadUser function to update the user state
+
         onRouteChange('App');
-        loadUser(userData); // Call loadUser with the received user data
+        loadUser(userData);
       } else {
-        // Handle errors, e.g., display error message
+
         alert('Incorrect email or password');
       }
     } catch (error) {
@@ -69,7 +69,7 @@ const Signin = ({ onRouteChange }) => {
           </button>
           <p>
             Don't have an account?{' '}
-            <a href="#sign-up" onClick={() => onRouteChange('signUp')}>
+            <a href="#" onClick={() => onRouteChange('signUp')}>
               Sign Up
             </a>
           </p>

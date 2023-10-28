@@ -20,7 +20,7 @@ const LandingPage = ({ onRouteChange }) => {
                     Let's redefine dialogue, one chat at a time.
                 </p>
                 <img class="app-logo" src={logo} alt="App Logo"></img> <br></br>
-                <a href="#sign-in">
+                <a href="#">
                     <button
                         style={{ backgroundColor: "#ff8800", color: "#ffffff", padding: "20px 30px",
                                 border: "none", borderRadius: "5px", cursor: "pointer"}}
