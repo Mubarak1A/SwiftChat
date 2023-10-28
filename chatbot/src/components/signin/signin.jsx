@@ -1,72 +1,86 @@
-import { React, useState } from 'react';
-import './signin.css'
-
+import React, { useState } from 'react';
+import './signin.css';
 
 const Signin = ({ onRouteChange }) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
+  const onSubmitSignin = async (event) => {
+    event.preventDefault();
 
-    const onSubmitSignin = async () => {
-        const myForm = document.getElementById('myForm');
+    try {
+      const response = await fetch('https://swiftchat-server.onrender.com/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      });
 
-        myForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-        })
+      if (response.status === 200) {
+        // Successful sign-in, you can redirect or show a success message
+        const userData = await response.json();
+        // Assuming you have a loadUser function to update the user state
+        onRouteChange('App');
+        loadUser(userData); // Call loadUser with the received user data
+      } else {
+        // Handle errors, e.g., display error message
+        alert('Incorrect email or password');
+      }
+    } catch (error) {
+      console.error('Error signing in:', error);
+    }
+  };
 
-        const response = await fetch('http://localhost:5000/signin', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json',
-          },
-            body: JSON.stringify({ email, password }),
-        });
+  return (
+    <div className="signin" id="sign-in">
+      <div className="container">
+        <h1>Sign In</h1>
 
-        console.log(response.status);
-        console.log(response);
-        
-        if (response.status === 400) {
-            // Successful sign-in, you can redirect or show a success message
-            onRouteChange('App');
-        } else {
-            // Handle errors, e.g., display error message
-            alert("Incorrect email or password");
-        }
-    };
+        <form onSubmit={onSubmitSignin}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
 
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
 
-    return(
-        <div classname='signin' id='sign-in'>
-            <div class="container">
-                <h1>Sign In</h1>
+          <button type="submit" className="submit-button">
+            Sign In
+          </button>
+          <p>
+            Don't have an account?{' '}
+            <a href="#sign-up" onClick={() => onRouteChange('signUp')}>
+              Sign Up
+            </a>
+          </p>
+        </form>
+      </div>
 
-                <form id='myForm'>
-                <div class="form-group">
-                    <label for="username">Email</label>
-                    <input type="email" id="username" name="email" placeholder="Enter your email" required>
-                    </input>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                    </input>
-                </div>
-
-                <button type="submit" class="submit-button"
-                    onClick={onSubmitSignin}>
-                    Sign In
-                </button>
-                <p>Don't have an account? <a href='#sign-up' onClick={() => onRouteChange('signUp')}>Sign Up</a></p>
-                </form>
-            </div>
-
-            <div class="footer">
-                &copy; 2023 Swift<span style={{color:"blue"}}>Chat</span>. All rights reserved.
-            </div>
-        </div>
-    );
-}
-
+      <div className="footer">
+        &copy; 2023 Swift<span style={{ color: 'blue' }}>Chat</span>. All rights reserved.
+      </div>
+    </div>
+  );
+};
 
 export default Signin;
