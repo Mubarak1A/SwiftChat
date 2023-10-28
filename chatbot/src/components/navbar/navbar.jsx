@@ -14,7 +14,7 @@ const Navbar = ({ onRouteChange, isSignedIn }) => {
                     </div>
 
                     <div className="nav-log">
-                        <a href="home" onClick={() => {onRouteChange('landingPage')}}
+                        <a href="#home" onClick={() => {onRouteChange('landingPage')}}
                             style={{color:"rgb(110, 104, 104)", textDecoration:"none", fontSize:"1.3em"}}>
                             SignOut
                         </a>

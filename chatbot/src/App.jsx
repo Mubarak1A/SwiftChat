@@ -11,7 +11,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      route: 'landingPage',
+      route: 'App',
       isSignedIn: false,
       user: {
         id: '',

@@ -11,7 +11,7 @@ import linkedin from '../../assets/linkedin.png'
 const LandingPage = ({ onRouteChange }) => {
     return(
         <div className="main">
-            <div class="intro-section">
+            <div class="intro-section" id="home">
                 <h1>Welcome to <strong style={{fontSize:"1em", color:"blue",}}>
                     Swift<span style={{color:"orange"}}>Chat</span></strong></h1>
 

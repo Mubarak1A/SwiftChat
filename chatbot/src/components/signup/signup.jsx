@@ -37,7 +37,7 @@ const Signup = ({ onRouteChange, loadUser }) => {
     };
 
     return (
-        <div classname='signup'>
+        <div classname='signup' id='sign-up'>
         <div class="container">
             <h1>Sign up</h1>
 
@@ -64,7 +64,7 @@ const Signup = ({ onRouteChange, loadUser }) => {
                 onClick={onSubmitSignin}>
                 Sign Up
             </button>
-            <p>Already have an account? <a href='#' onClick={() => onRouteChange('signIn')}>Sign In</a></p>
+            <p>Already have an account? <a href='#sign-in' onClick={() => onRouteChange('signIn')}>Sign In</a></p>
             </form>
         </div>
 
