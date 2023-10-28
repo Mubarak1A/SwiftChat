@@ -86,7 +86,7 @@ const ChatBot = () => {
             </MainContainer>
         </div>
 
-      <div className="footer" style={{ position: "fixed", bottom: "0", right: "0", left: "0", marginTop: "20px" }}>
+      <div className="footer" style={{ position: "fixed", bottom: "0", right: "0", left: "0", marginTop: "20px", zIndex:"10" }}>
         &copy; 2023 Swift<span style={{ color: "blue" }}>Chat</span>. All rights reserved.
       </div>
     </div>
