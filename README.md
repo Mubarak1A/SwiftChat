@@ -28,7 +28,7 @@ Install dependencies:
   - Open your web browser and go to `http://localhost:3000` to use the chatbot application.
 
 ## Deployment
-This project was particular deployed on vercel and can be checkked at `https://swiftchat-bot.vercel.app/`.
+This project was particular deployed on vercel and can be checkked at https://swiftchat-bot.vercel.app/.
 
 ## Built With
   - React - The JavaScript library for building the user interface.
