@@ -24,8 +24,7 @@ Install dependencies:
 
 
 ## Usage
-Start the development server:
-`npm start`
+  - Start the development server: `npm start`
 Open your web browser and go to `http://localhost:3000` to use the chatbot application.
 
 ## Deployment
