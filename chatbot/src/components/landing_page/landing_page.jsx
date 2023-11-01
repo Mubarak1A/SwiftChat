@@ -49,7 +49,7 @@ const LandingPage = ({ onRouteChange }) => {
                 <img class="team-member-image" src={mubarak} alt="Team Member"></img>
                 <h3>Mubarak Adesina</h3>
                 <p>Full-Stack Developer</p>
-                <div class="social-media-links">
+                <div class="social-media-links" style={{marginBottom:"60px"}}>
                     <a href="https://www.facebook.com/adesina.mubarak.73" target="_blank">
                         <img src={facebook} alt="Facebook"></img>
                     </a>

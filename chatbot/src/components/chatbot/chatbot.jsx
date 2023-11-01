@@ -69,7 +69,7 @@ const ChatBot = () => {
   }
 
   return(
-    <div className='chatbot' id='app' style={{ marginTop:"80px"}}>
+    <div className='chatbot' id='app' style={{ margin:"80px 0"}}>
         <div style={{ position:'relative', height:'100%', width:'70%', margin:'auto' }}>
             <MainContainer>
                 <ChatContainer  style={{padding:"10px"}}>

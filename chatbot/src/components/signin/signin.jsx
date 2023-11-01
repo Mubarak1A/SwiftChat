@@ -22,7 +22,8 @@ const Signin = ({ onRouteChange }) => {
         const userData = await response.json();
 
         onRouteChange('App');
-        loadUser(userData);
+        //loadUser(userData);
+        alert("Login Successfull.Proceed to ChatBot")
       } else {
 
         alert('Incorrect email or password');

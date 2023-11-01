@@ -17,14 +17,13 @@ const Signup = ({ onRouteChange, loadUser }) => {
       });
 
       if (response.ok) {
-        // Assuming a successful signup returns a status code of 200 or 201
         const user = await response.json();
         loadUser(user);
         onRouteChange('signIn');
       } else {
-        // Handle errors, e.g., email already in use
-        const errorResponse = await response.json();
-        alert(errorResponse);
+        // Handle errors
+        const errorResponseText = await response.text();
+        alert(errorResponseText);
       }
     } catch (error) {
       console.error('Error during signup:', error);
@@ -88,7 +87,7 @@ const Signup = ({ onRouteChange, loadUser }) => {
           </button>
           <p>
             Already have an account?{' '}
-            <a href='#' onClick={() => onRouteChange('signIn')}>
+            <a href='#sign-in' onClick={() => onRouteChange('signIn')}>
               Sign In
             </a>
           </p>
